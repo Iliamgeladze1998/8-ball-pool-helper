@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "8 Ball Pool Helper",
+  "version": "1.0.0",
+  "description": "Transparent manual drawing overlay for offline/personal pool practice. Reads no game data.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Toggle Canvas Guide Overlay"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.8ballpool.com/*", "https://8ballpool.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "commands": {
+    "toggle-overlay": {
+      "suggested_key": { "default": "Alt+G" },
+      "description": "Toggle the guide overlay"
+    }
+  }
+}
