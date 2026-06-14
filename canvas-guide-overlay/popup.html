@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 260px;
+      margin: 0;
+      font: 13px/1.5 system-ui, -apple-system, sans-serif;
+      background: #14141c;
+      color: #f0f0f5;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, #0c6e46, #094f38);
+      border-bottom: 1px solid #2a2a35;
+    }
+    .header img { width: 28px; height: 28px; border-radius: 6px; }
+    .header h1 { font-size: 14px; margin: 0; font-weight: 700; }
+    .body { padding: 12px 14px; }
+    .btn {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      background: #3d6cff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn:hover { background: #5a82ff; }
+    .hint { margin-top: 10px; font-size: 11px; color: #a0a0b0; }
+    kbd {
+      background: #2a2a35;
+      border: 1px solid #3a3a48;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+    }
+    .steps { margin: 10px 0 0; padding-left: 18px; font-size: 12px; color: #c0c0d0; }
+    .steps li { margin-bottom: 3px; }
+    .note {
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: #1a1a24;
+      border-radius: 6px;
+      font-size: 10.5px;
+      color: #8a8a9a;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icons/icon48.png" alt="">
+    <h1>8 Ball Pool Helper</h1>
+  </div>
+  <div class="body">
+    <button class="btn" id="toggle">Toggle Overlay</button>
+    <div class="hint">or press <kbd>Alt</kbd> + <kbd>G</kbd> anywhere on the page</div>
+    <ol class="steps">
+      <li><kbd>T</kbd> — drag to set the table</li>
+      <li><kbd>A</kbd> — click the cue ball, move to aim</li>
+      <li>Click again (or <kbd>L</kbd>) to lock the line</li>
+      <li><kbd>U</kbd> undo · <kbd>C</kbd> clear · <kbd>H</kbd> help</li>
+    </ol>
+    <div class="note">
+      Manual practice tool. It draws only the lines you place by hand and does
+      not read game data. Intended for offline / practice-vs-computer use.
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
